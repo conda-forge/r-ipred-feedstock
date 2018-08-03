@@ -14,14 +14,16 @@ Summary: Improved predictive models by indirect classification and bagging for c
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/r-ipred-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/r-ipred-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/r-ipred-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/r-ipred-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/r-ipred-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/r-ipred-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-ipred-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-ipred-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/r-ipred-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-ipred-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-ipred-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-ipred-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-ipred/badges/version.svg)](https://anaconda.org/conda-forge/r-ipred)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-ipred/badges/downloads.svg)](https://anaconda.org/conda-forge/r-ipred)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-r--ipred-green.svg)](https://anaconda.org/conda-forge/r-ipred) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/r-ipred.svg)](https://anaconda.org/conda-forge/r-ipred) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/r-ipred.svg)](https://anaconda.org/conda-forge/r-ipred) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/r-ipred.svg)](https://anaconda.org/conda-forge/r-ipred) |
 
 Installing r-ipred
 ==================
