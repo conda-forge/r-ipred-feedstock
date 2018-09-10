@@ -1,5 +1,4 @@
-{% set version = "0.9-7" %}
-
+{% set version = '0.9-7' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,13 +9,13 @@ package:
 source:
   fn: ipred_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/ipred_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/ipred/ipred_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/ipred_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/ipred/ipred_{{ version }}.tar.gz
   sha256: a4885c5c13c0e3a22da86956b5260cdb228a4eaeda55469ae60114433466a360
 
 build:
   merge_build_host: True  # [win]
-  number: 0
+  number: 1
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -24,9 +23,13 @@ build:
 
 requirements:
   build:
-    - posix                # [win]
-    - {{ compiler('c') }}        # [unix]
-    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ compiler('c') }}        # [not win]
+    - {{native}}toolchain        # [win]
+    - {{posix}}filesystem        # [win]
+    - {{posix}}make
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-mass
@@ -35,9 +38,9 @@ requirements:
     - r-prodlim
     - r-rpart >=3.1_8
     - r-survival
-
   run:
     - r-base
+    - {{native}}gcc-libs         # [win]
     - r-mass
     - r-class
     - r-nnet
@@ -47,23 +50,24 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('ipred')"  # [not win]
+    - $R -e "library('ipred')"           # [not win]
     - "\"%R%\" -e \"library('ipred')\""  # [win]
 
 about:
   home: https://CRAN.R-project.org/package=ipred
   license: GPL (>= 2)
-  summary: Improved predictive models by indirect classification and bagging for classification,
+  summary: 'Improved predictive models by indirect classification and bagging for classification,
     regression and survival problems  as well as resampling based estimators of prediction
-    error.
+    error. '
   license_family: GPL3
   license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
   license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
 
 extra:
   recipe-maintainers:
-    - cbrueffer
     - johanneskoester
     - bgruening
     - daler
     - jdblischak
+    - cbrueffer
+    - dbast
