@@ -7,7 +7,7 @@ Package license: GPL (>= 2)
 
 Feedstock license: BSD 3-Clause
 
-Summary: Improved predictive models by indirect classification and bagging for classification, regression and survival problems  as well as resampling based estimators of prediction error.
+Summary: Improved predictive models by indirect classification and bagging for classification, regression and survival problems  as well as resampling based estimators of prediction error. 
 
 
 
