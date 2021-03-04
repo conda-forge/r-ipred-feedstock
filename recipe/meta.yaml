@@ -1,4 +1,4 @@
-{% set version = '0.9-9' %}
+{% set version = "0.9-10" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ipred_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ipred/ipred_{{ version }}.tar.gz
-  sha256: 0da87a70730d5a60b97e46b2421088765e7d6a7cc2695757eba0f9d31d86416f
+  sha256: c3a8fb1c0c3698649768d5e93b2bb8ec6235a7efe6038cfe92e1c043b6682c5d
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -53,12 +53,11 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=ipred
-  license: GPL (>= 2)
-  summary: 'Improved predictive models by indirect classification and bagging for classification,
-    regression and survival problems  as well as resampling based estimators of prediction
-    error. '
+  license: GPL-2.0-or-later
+  summary: 'Improved predictive models by indirect classification and bagging for classification, regression and survival problems  as well as resampling based estimators of prediction error. '
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
